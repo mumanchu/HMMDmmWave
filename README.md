@@ -1,35 +1,34 @@
 # Arduino library for WaveShare HMMD 24GHz mmWave Sensor
 
-This WaveShare HMMD module looks exactly the same as HLK-LD2410x mmWave modules, but it has a yet another slightly different protocol. You cannot use the LD2410 libraries with this module.
+This 3.3V WaveShare HMMD module looks exactly the same as HLK-LD2410x mmWave modules, but it has a yet another slightly different protocol. You cannot use the LD2410 libraries with this module.
 
 <img height="300" alt="LD2410 Boards" src="images/waveshare-hmmd-mmwave-board.jpg" />
 
-The WaveShare Wiki describes everything, including the Windows application for configuration, which was written by the S3KM1110 mmWave chip manufacturer (ICLEGEND). \
+The WaveShare Wiki describes everything, including a nice Windows application for configuration, which was written by the S3KM1110 mmWave chip manufacturer (ICLEGEND). \
 https://www.waveshare.com/wiki/HMMD_mmWave_Sensor
 
 > [!TIP]
-> In fact, there is no need to use this library for configuring the HMMD module, just use the WaveShare Windows application. Use this library only if you don't have a USB-to-TTL adapter, or for polling the radar reports, or just for experimentation.
+> In fact, there is no need to use this library for configuring the HMMD module, just use the WaveShare Windows application! Use this library only if you don't have a USB-to-TTL adapter, or for polling the radar reports, or just for experimentation.
 
 > [!CAUTION]
-> If you use their Windows application, always use the WaveShare USB-to-TTL adapter because this provides the necessary 3.3V for the sensor board. IT WILL NOT RUN ON 5V! \
-> Most other USB-to-TTL adapters provide VCC at 5V, directly from the USB power, even if they are the 3.3V versions! **BANG!** \
+> If you use their Windows application, _always_ use the WaveShare USB-to-TTL adapter because this provides the necessary 3.3V for the sensor board. THE BOARD WILL NOT RUN ON 5V! \
+> Most other USB-to-TTL adapters provide VCC at 5V, directly from the USB power, even if they are the 3.3V versions! **BANG!!** \
 > I made an adapter with a 3.3V regulator to provide the 3.3V for the WaveShare board.
 
 
 ## Installing the Library
 
-Download the latest ZIP file with green button on this library's Github screen, "<> Code / Download Zip". This downloads a file called "LD2410mmWave-main.zip" into your Downloads directory.
+Download the latest ZIP file with green button on this library's Github screen, "<> Code / Download Zip". This downloads a file called "HMMDmmWave-main.zip" into your Downloads directory.
 
-**To install the ZIP file with the Arduino IDE** \
-Select menu item "Sketch / Include Library > Add ZIP Library...". This opens the "Select ZIP File" window. Open the Downloads directory and choose the "LD2410mmWave-main.zip" file you just downloaded. You should see a "Successfully installed library" message. \
-To open the example sketch, select menu item "File > Examples" and scroll down beyond "Examples from Custom Libraries" and choose the "LD2410mmWave > LD2410mmWave-Example" entry. This opens the "LD2410mmWave-Example.ino" example sketch in a new Arduino IDE window.
+**To install the ZIP file with the Arduino IDE**
+
+Select menu item "Sketch / Include Library > Add ZIP Library...". This opens the "Select ZIP File" window. Open the Downloads directory and choose the "HMMDmmWave-main.zip" file you just downloaded. You should see a "Successfully installed library" message. \
+To open the example sketch, select menu item "File > Examples" and scroll down beyond "Examples from Custom Libraries" and choose the "HMMDmmWave > HMMDmmWave-Example1" entry. This opens the "HMMDmmWave-Example1.ino" example sketch in a new Arduino IDE window.
 
 
 ## Class Reference
 
-This provides an overview of the library.
-
-For details of each method, refer to the comments in the source code, [src/HMMDmmWave.h](src/LHMMDmmWave.h).
+This provides an overview of the library. For details of each method, refer to the comments in the source code, [src/HMMDmmWave.h](src/LHMMDmmWave.h).
 
 The library is in a single include file, not separate `.h` and `.cpp` files. This is fine if you want to access the class from a single source file, which is the usual case. If you need to access it from more than one source file, then move the code into a `.cpp` file.
 
@@ -103,13 +102,13 @@ public:
 
 ## Example Sketch
 
-The example sketch uses two serial ports. `Serial` for the Serial Monitor output, and `Serial1` for communicating with the mmWave sensor. It shows how to define `Serial1` on several different MCUs.
+The example sketch uses two serial ports. `Serial` for the Serial Monitor output, and `Serial1` for communicating with the mmWave sensor. It shows how to define `Serial1` for several different MCUs.
 
-For MCUs running at less than 120MHz, `Serial1` must be `HardwareSerial` (or `Uart`), because `SoftwareSerial` will not run reliably ate 115200 baud. 
+For MCUs running at less than 120MHz, `Serial1` must be `HardwareSerial` (or `Uart`), because `SoftwareSerial` will not run reliably at 115200 baud. 
 
 `setup()` initialises the sensor and displays some information from the sensor.
 
-`loop()` polls for radar report messages and displays them on the Serial Monitor. If you are using PuTTy, or a Serial Monitor which supports '\r' (carraige return WITHOUT linefeed), then you will get a nice non-scrolling display. With the Arduino Serial Monitor you will see a scrolling display because this does not support '\r' or any escape sequences.
+`loop()` polls for radar report messages and displays them on the Serial Monitor. If you are using PuTTy, or a Serial Monitor which supports '\r' (carriage return WITHOUT linefeed), then you will get a nice non-scrolling display. With the Arduino Serial Monitor you will see a scrolling display because it does not support '\r', or any escape sequences.
 
 <img alt="PuTTY Display" src="images/example-sketch-on-putty-small.jpg" />
 
@@ -145,5 +144,5 @@ Did you sleep well?
 
 _Yes, I slept like a baby._
 
-_Woke up ten times in the night screaming for mummy and wet the bed._
+_Woke up ten times in the night screaming for mummy and wet the bed twice._
 
