@@ -8,7 +8,12 @@ The WaveShare Wiki describes everything, including the Windows application for c
 https://www.waveshare.com/wiki/HMMD_mmWave_Sensor
 
 > [!TIP]
-> In fact, there is no need to use this library for configuring the HMMD module, just use the WaveShare Windows application. Use this library only for polling the radar reports, or for experimentation.
+> In fact, there is no need to use this library for configuring the HMMD module, just use the WaveShare Windows application. Use this library only if you don't have a USB-to-TTL adapter, or for polling the radar reports, or just for experimentation.
+
+> [!CAUTION]
+> If you use their Windows application, always use the WaveShare USB-to-TTL adapter because this provides the necessary 3.3V for the sensor board. IT WILL NOT RUN ON 5V! \
+> Most other USB-to-TTL adapters provide VCC at 5V, directly from the USB power, even if they are the 3.3V versions! **BANG!** \
+> I made an adapter with a 3.3V regulator to provide the 3.3V for the WaveShare board.
 
 
 ## Installing the Library
@@ -106,7 +111,7 @@ For MCUs running at less than 120MHz, `Serial1` must be `HardwareSerial` (or `Ua
 
 `loop()` polls for radar report messages and displays them on the Serial Monitor. If you are using PuTTy, or a Serial Monitor which supports '\r' (carraige return WITHOUT linefeed), then you will get a nice non-scrolling display. With the Arduino Serial Monitor you will see a scrolling display because this does not support '\r' or any escape sequences.
 
-<img alt="PuTTY Display" src="images/example-sketch-on-putty-small.jpg" />
+<img height="300" alt="PuTTY Display" src="images/example-sketch-on-putty-small.jpg" />
 
 
 ## References
