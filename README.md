@@ -111,7 +111,7 @@ For MCUs running at less than 120MHz, `Serial1` must be `HardwareSerial` (or `Ua
 
 `loop()` polls for radar report messages and displays them on the Serial Monitor. If you are using PuTTy, or a Serial Monitor which supports '\r' (carraige return WITHOUT linefeed), then you will get a nice non-scrolling display. With the Arduino Serial Monitor you will see a scrolling display because this does not support '\r' or any escape sequences.
 
-<img height="300" alt="PuTTY Display" src="images/example-sketch-on-putty-small.jpg" />
+<img alt="PuTTY Display" src="images/example-sketch-on-putty-small.jpg" />
 
 
 ## References
