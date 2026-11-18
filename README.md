@@ -25,6 +25,8 @@ Download the latest ZIP file with green button on this library's Github screen, 
 Select menu item "Sketch / Include Library > Add ZIP Library...". This opens the "Select ZIP File" window. Open the Downloads directory and choose the "HMMDmmWave-main.zip" file you just downloaded. You should see a "Successfully installed library" message. \
 To open the example sketch, select menu item "File > Examples" and scroll down beyond "Examples from Custom Libraries" and choose the "HMMDmmWave > HMMDmmWave-Example1" entry. This opens the "HMMDmmWave-Example1.ino" example sketch in a new Arduino IDE window.
 
+_<what about uninstalling the library? that's what I want to know - ed>_
+
 
 ## Class Reference
 
