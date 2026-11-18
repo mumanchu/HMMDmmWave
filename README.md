@@ -30,7 +30,7 @@ _<what about uninstalling the library? that's what I want to know - ed>_
 
 ## Class Reference
 
-This provides an overview of the library. For details of each method, refer to the comments in the source code, [src/HMMDmmWave.h](src/LHMMDmmWave.h).
+This provides an overview of the library. For details of each method, refer to the comments in the source code, [src/HMMDmmWave.h](src/HMMDmmWave.h).
 
 The library is in a single include file, not separate `.h` and `.cpp` files. This is fine if you want to access the class from a single source file, which is the usual case. If you need to access it from more than one source file, then move the code into a `.cpp` file.
 
