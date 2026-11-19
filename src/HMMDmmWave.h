@@ -3,7 +3,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Arduino Library for WaveShare HMMD mmWave Sensor 
 // 24GHz Human Micro-Motion detector
-// Copyright (C) https://muman.ch + https://github.com/github, 2026.11.18
+// Copyright (C) https://muman.ch + https://github.com/github, 2026.11.19
 // If you re-use this software, please include the above copyright notice
 // Released under the terms of the BSD-3-Clause-License
 // https://github.com/mumanchu/HMMDmmWave
@@ -80,6 +80,7 @@ public:
 	bool receive(RadarData* data = NULL);
 	//bool receiveDebugFrame(Stream* stream, byte* buf, uint bufLength, uint* frameLength);
 
+	// Configuration commands are only needed once
 	#ifdef HMMD_ENABLE_CONFIG
 
 	// Configuration Parameter Numbers, for read/writeParameter();
@@ -182,6 +183,7 @@ bool HMMDmmWave::getDeviceId(ulong* deviceId)
 
 // Return the 8-character serial number of the chip as a string
 // the default for my chip was "FFFFFFFF"
+// you can re-program it with setSerailNumber()
 bool HMMDmmWave::getSerialNumber(char* serialNumber /*8 chars + NUL*/)
 {
 	*serialNumber = '\0';
