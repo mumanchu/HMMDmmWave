@@ -52,10 +52,12 @@ Uart Serial1(USART1);
 #endif
 
 
-// Uncomment this to the messages in hex
+// Uncomment this to show the messages in hex
 //#define HMMD_SHOW_MESSAGES
-// Enables the configuration methods
+
+// This enables the configuration methods
 #define HMMD_ENABLE_CONFIG
+
 #include "HMMDmmWave.h"
 HMMDmmWave sensor;
 
