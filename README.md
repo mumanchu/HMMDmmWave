@@ -1,11 +1,14 @@
-# Arduino library for WaveShare HMMD 24GHz mmWave Sensor
+﻿# Arduino library for WaveShare HMMD 24GHz mmWave Sensor (LD2420)
 
 This 3.3V WaveShare HMMD module looks exactly the same as HLK-LD2410x mmWave modules, but it has a yet another slightly different protocol. You cannot use the LD2410 libraries with this module.
 
 <img height="300" alt="LD2410 Boards" src="images/waveshare-hmmd-mmwave-board.jpg" />
 
-The WaveShare Wiki describes everything, including a nice Windows application for configuration, which was written by the S3KM1110 mmWave chip manufacturer (ICLEGEND). \
+The WaveShare Wiki describes everything, including a nice Windows application for configuration (ICLM_XenD101MM01_HP02Tool.exe), which was written by the S3KM1110 mmWave chip manufacturer, ICLEGEND. \
 https://www.waveshare.com/wiki/HMMD_mmWave_Sensor
+
+I found just one github library for this WaveShare module, and I had some problems with it, so I wrote my own.
+
 
 > [!TIP]
 > In fact, there is no need to use this library for configuring the HMMD module, just use the WaveShare Windows application! Use this library only if you don't have a USB-to-TTL adapter, or for polling the radar reports, or just for experimentation.
