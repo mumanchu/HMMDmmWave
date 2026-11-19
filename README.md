@@ -15,7 +15,8 @@ I found just one github library for this WaveShare module, and I had some proble
 
 > [!CAUTION]
 > If you use their Windows application, _always_ use the WaveShare USB-to-TTL adapter because this provides the necessary 3.3V for the sensor board. THE BOARD WILL NOT RUN ON 5V! \
-> Most other USB-to-TTL adapters provide VCC at 5V, directly from the USB power, even if they are the 3.3V versions! **BANG!!** \
+> Most other USB-to-TTL adapters provide VCC at 5V, directly from the USB power, even if they are the 3.3V versions! \
+> **BANG!!** \
 > I made an adapter with a 3.3V regulator to provide the 3.3V for the WaveShare board.
 
 
